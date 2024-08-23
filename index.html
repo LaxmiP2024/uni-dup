@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+            //wap to print unique and duplicate numbers in a given number
+
+            num = prompt("Enter a number :");
+            (dup = ""), (uni = "");
+            emp = [];
+            for (i of num) {
+              if (!emp.includes(i)) emp.push(i);
+            }
+            for (i of emp) {
+              c = 0;
+              for (j of num) {
+                if (i == j) {
+                  c++;
+                }
+              }
+              if (c == 1) {
+                uni = uni + i + " ";
+              } else {
+                dup = dup + i + " ";
+              }
+            }
+            console.log("Unique are : " + uni);
+
+            if (dup == "") {
+              console.log("No duplicates");
+            } else {
+              console.log("Duplicate are:" + dup);
+            }
+
+//WAP to print duplicate numbers in given number in descending order
+
+            let number = 121133;
+            let strNum = number.toString();
+            let arr = [];
+
+            // Convert string to array of digits
+            for (let i = 0; i < strNum.length; i++) {
+              arr.push(strNum[i]);
+            }
+
+            // Sort array in descending order
+            arr.sort((a, b) => b - a);
+
+            let duplicates = [];
+
+            // Check for duplicates
+            for (let i = 0; i < arr.length - 1; i++) {
+              if (arr[i] === arr[i + 1] && !duplicates.includes(arr[i])) {
+                duplicates.push(arr[i]);
+              }
+            }
+
+            // Print duplicates
+            for (let i = 0; i < duplicates.length; i++) {
+              console.log("Duplicates in descending order are: "+duplicates[i]);
+            }
+
+// Another method
+// let numbers = [4, 2, 7, 5, 2, 4, 8, 7, 4];
+// let duplicates = [];
+// for (let i = 0; i < numbers.length; i++) {
+//     for (let j = i + 1; j < numbers.length; j++) {
+//         if (numbers[i] === numbers[j] && !duplicates.includes(numbers[i])) {
+//             duplicates.push(numbers[i]);
+//             break;
+//         }
+//     }
+// }
+// duplicates.sort(function(a, b) {
+//     return b - a;
+// });
+
+// console.log(duplicates);
+    </script>
+  </body>
+</html>
